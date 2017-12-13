@@ -1,0 +1,4 @@
+#\u041C\u043E\u0438 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430
+#Mon Jul 31 12:36:22 EEST 2017
+dimension=10x10
+language=russian
