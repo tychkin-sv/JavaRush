@@ -36,8 +36,6 @@ public class Solution {
             found = true;
             break label;
         }*/
-
-
         return string.contains(substring);
     }
 }
