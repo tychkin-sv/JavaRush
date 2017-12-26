@@ -23,7 +23,7 @@ public class Solution {
 
 
     public Solution() {
-        System.out.println("Solution constructor");
+        System.out.println("SolutionMy constructor");
         printAllFields(this);
     }
 
@@ -50,7 +50,7 @@ non-static block
 static void printAllFields
 0
 null
-Solution constructor
+SolutionMy constructor
 static void printAllFields
 6
 First name

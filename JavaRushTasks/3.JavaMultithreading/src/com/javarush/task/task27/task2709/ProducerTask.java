@@ -5,6 +5,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ProducerTask implements Runnable {
     private TransferObject transferObject;
     protected volatile boolean stopped;
+
+
     static volatile AtomicInteger i = new AtomicInteger(0);
 
     public ProducerTask(TransferObject transferObject) {
@@ -13,9 +15,14 @@ public class ProducerTask implements Runnable {
     }
 
     public void run() {
-        while (!stopped) {
-            transferObject.put(i.incrementAndGet());
-        }
+        // 2. В методе run класса ProducerTask должен содержаться synchronized блок, монитор - transferObject.
+
+            while (!stopped) {
+                synchronized (transferObject) {
+                transferObject.put(i.incrementAndGet());
+                }
+            }
+
     }
 
     public void stop() {

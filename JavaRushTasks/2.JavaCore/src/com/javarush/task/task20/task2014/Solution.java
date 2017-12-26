@@ -5,16 +5,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /* 
-Serializable Solution
-Сериализуй класс Solution.
+Serializable SolutionMy
+Сериализуй класс SolutionMy.
 Подумай, какие поля не нужно сериализовать, пометь ненужные поля модификатором transient.
 Объект всегда должен содержать актуальные итоговые данные.
 Метод main не участвует в тестировании.
 Написать код проверки самостоятельно в методе main:
 1) создать файл, открыть поток на чтение (input stream) и на запись(output stream);
-2) создать экземпляр класса Solution — savedObject;
+2) создать экземпляр класса SolutionMy — savedObject;
 3) записать в поток на запись savedObject (убедитесь, что они там действительно есть);
-4) создать другой экземпляр класса Solution с другим параметром;
+4) создать другой экземпляр класса SolutionMy с другим параметром;
 5) загрузить из потока на чтение объект — loadedObject;
 6) проверить, что savedObject.string равна loadedObject.string;
 7) обработать исключения.

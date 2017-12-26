@@ -10,9 +10,15 @@ public class ConsumerTask implements Runnable {
     }
 
     public void run() {
-        while (!stopped) {
-            transferObject.get();
-        }
+        // 1. В методе run класса ConsumerTask должен содержаться synchronized блок, монитор - transferObject.
+
+
+            while (!stopped) {
+                synchronized (transferObject){
+                transferObject.get();
+                }
+            }
+
     }
 
     public void stop() {
