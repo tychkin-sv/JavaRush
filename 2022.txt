@@ -1,0 +1,2 @@
+savedObject : hello
+loadedObject : hello
