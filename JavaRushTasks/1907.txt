@@ -1,6 +1,0 @@
-FileReader fr = new FileReader(sourceFile);
-world world
-111
-2222
-333 444
-worldworld world
