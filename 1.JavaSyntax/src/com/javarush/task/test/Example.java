@@ -15,13 +15,17 @@ public class Example {
 
         set.add(1);
         set.add(2);
+        System.out.println(set);
 
         example1(set);
+        System.out.println(newSet);
         example2(set);
+        System.out.println(newSet);
+
+
     }
 
     public static void example1(Set<Integer> set) throws IOException {
-        //newSet = (HashSet) set.clone();
         HashSet iCanClone= (HashSet) set;
         newSet = (HashSet) iCanClone.clone();
     }

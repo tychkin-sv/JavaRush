@@ -14,9 +14,11 @@ public class Person implements Runnable {
         try {
             Thread.sleep(1000);
             //сделайте что-то тут - do something here
+
             synchronized (mail) {
                 mail.setText("Person [" + name + "] has written an email 'AAA'");
-                while (mail.getText()==null){this.wait();}
+                while (mail.getText()==null){mail.wait();}
+                mail.notify();
             }
             //сделайте что-то тут - do something here
         } catch (InterruptedException e) {

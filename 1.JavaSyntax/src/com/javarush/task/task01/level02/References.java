@@ -1,4 +1,5 @@
-package level02;
+package com.javarush.task.task01.level02;
+
 
 public class References
 {

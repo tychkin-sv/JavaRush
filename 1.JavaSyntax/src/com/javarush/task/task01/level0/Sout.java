@@ -1,4 +1,4 @@
-package level0;
+package com.javarush.task.task01.level0;
 
 /**
  * Created by userPG on 04.04.2017.
