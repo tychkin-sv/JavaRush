@@ -14,9 +14,11 @@ public class Solution {
 
         if (args.length>1) {
             File path = new File(args[0]);
+            System.out.println(args[0]);
             File resultFileAbsolutePath = new File(args[1]);
 
             File allFilesContent = new File(resultFileAbsolutePath.getParent() + "\\allFilesContent.txt");
+
             FileUtils.renameFile(resultFileAbsolutePath, allFilesContent);
 
             try (FileOutputStream outputStream = new FileOutputStream(allFilesContent)) {

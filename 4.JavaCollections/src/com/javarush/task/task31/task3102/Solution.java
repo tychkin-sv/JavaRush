@@ -33,6 +33,6 @@ public class Solution {
     }
 
     public static void main(String[] args) throws IOException {
-        //for (String s:getFileTree("d:\\JAVA\\")) System.out.println(s);
+        for (String s:getFileTree("d:\\JAVA\\")) System.out.println(s);
     }
 }

@@ -42,6 +42,18 @@ public class Solution {
     }
 
     public static Callable<String> getTask(final int i) {
-        return null;
+
+
+        return new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                long sum = 0;
+                for (int index = 1; index<=i; index++)
+                {
+                    sum = sum + index;
+                }
+                return ""+sum;
+            }
+        };
     }
 }
