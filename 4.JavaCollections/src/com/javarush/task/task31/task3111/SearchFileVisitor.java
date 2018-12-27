@@ -20,6 +20,7 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
     }
 
     public void setPartOfName(String partOfName) {
+
         this.partOfName = partOfName;
     }
 

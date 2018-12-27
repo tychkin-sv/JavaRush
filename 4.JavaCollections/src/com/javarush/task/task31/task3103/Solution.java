@@ -1,7 +1,6 @@
 package com.javarush.task.task31.task3103;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -24,5 +23,12 @@ public class Solution {
 
     public static void copy(String resourceFileName, String destinationFileName) throws IOException {
         Files.copy(Paths.get(resourceFileName), Paths.get(destinationFileName));
+    }
+
+    public static void main(String[] args) throws IOException {
+        System.out.println(Solution.readBytes("d:/javarush/allFilesContent.txt"));
+        System.out.println(Solution.readLines("d:/javarush/allFilesContent.txt"));
+
+
     }
 }
