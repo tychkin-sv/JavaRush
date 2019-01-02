@@ -18,10 +18,10 @@ public class Solution {
         //Напишите тут ваше решение
         Integer max = null;
         Integer min = null;
-for (int i=0; i<array.length; i++){
+        for (int i=0; i<array.length; i++){
             if ((max == null) || (max<array[i])) max = array[i];
             if ((min == null) || (min>array[i])) min = array[i];
-}
+        }
         return new Pair<Integer, Integer>(min, max);
     }
 
