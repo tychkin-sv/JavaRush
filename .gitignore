@@ -1,4 +1,4 @@
-# .idea/*
+#.idea/*
 out/*
 
 *.class
@@ -8,3 +8,4 @@ out/*
 *.ear
 
 out/*
+out.log

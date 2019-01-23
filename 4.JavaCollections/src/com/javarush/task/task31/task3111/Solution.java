@@ -19,7 +19,8 @@ public class Solution {
         searchFileVisitor.setMinSize(500);
         searchFileVisitor.setMaxSize(10000);
 
-        Files.walkFileTree(Paths.get("D:/SecretFolder"), searchFileVisitor);
+        Files.walkFileTree(Paths.get("D:/JavaRush/3111"), searchFileVisitor);
+        //Files.walkFileTree(Paths.get("D:/SecretFolder"), searchFileVisitor);
 
         List<Path> foundFiles = searchFileVisitor.getFoundFiles();
         for (Path file : foundFiles) {
