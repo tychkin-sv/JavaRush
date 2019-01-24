@@ -19,11 +19,14 @@ public class Archiver {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Введите полный путь архива :");
         String uriZip = bufferedReader.readLine();
-        //System.out.println(fileName);
+        //String uriZip = "d:\\JavaRush\\3110\\archive.zip";
+
         Path zipFile = Paths.get(uriZip);
         ZipFileManager zipFileManager = new ZipFileManager(zipFile);
         System.out.print("Введите полный путь файла :");
-        String sourceURI = bufferedReader.readLine();
+        String sourceURI =bufferedReader.readLine();
+        //String sourceURI = "d:\\JavaRush\\3110\\toArchive.txt";
+
         Path sourceFile = Paths.get(sourceURI);
         zipFileManager.createZip(sourceFile);
 
