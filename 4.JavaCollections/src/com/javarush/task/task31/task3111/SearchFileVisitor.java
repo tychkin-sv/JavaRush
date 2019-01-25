@@ -5,6 +5,7 @@ import java.nio.file.FileVisitResult;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchFileVisitor extends SimpleFileVisitor<Path> {
@@ -16,6 +17,10 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        if (foundFiles == null) foundFiles = new ArrayList<>();
+        //if ((attrs.size()>=minSize) && (attrs.size()<=maxSize))
+        foundFiles.add(file);
+        System.out.println("file name:" + file.getFileName());
         return super.visitFile(file, attrs);
     }
 

@@ -30,7 +30,7 @@ public class Solution {
             sb.append((char) fr.read());
         }
         String str = sb.toString();
-        //System.out.println(str);
+        System.out.println(str);
         String[] words = str.toString().split("\\W");
         for (String s: words) {
             if (s.toLowerCase().equals(SEARCH_WORD)) count++;
