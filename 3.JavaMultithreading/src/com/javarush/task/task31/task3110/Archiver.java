@@ -1,34 +1,41 @@
 package com.javarush.task.task31.task3110;
 
-import com.sun.nio.zipfs.ZipPath;
+import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 
-import java.io.BufferedReader;
+
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 
 
 public class Archiver {
 
-
+    public static Operation askOperation() throws IOException {
+        ConsoleHelper.writeMessage("");
+        ConsoleHelper.writeMessage("Выберите операцию:");
+        // Понравилась реализация другого человека, у меня была проще
+        ConsoleHelper.writeMessage(String.format("\t %d - упаковать файлы в архив", Operation.CREATE.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - добавить файл в архив", Operation.ADD.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - удалить файл из архива", Operation.REMOVE.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - распаковать архив", Operation.EXTRACT.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - просмотреть содержимое архива", Operation.CONTENT.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - выход", Operation.EXIT.ordinal()));
+        return Operation.values()[ConsoleHelper.readInt()];
+    }
 
 
     public static void main(String[] args) throws Exception {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Введите полный путь архива :");
-        String uriZip = bufferedReader.readLine();
-        //String uriZip = "d:\\JavaRush\\3110\\archive.zip";
+        Operation operation = null;
+        do {
+            try {
+                operation = askOperation();
+                CommandExecutor.execute(operation);
+            } catch (WrongZipFileException e) {
+                ConsoleHelper.writeMessage("Вы не выбрали файл архива или выбрали неверный файл.");
+            } catch (Exception e) {
+                ConsoleHelper.writeMessage("Произошла ошибка. Проверьте введенные данные.");
+            }
 
-        Path zipFile = Paths.get(uriZip);
-        ZipFileManager zipFileManager = new ZipFileManager(zipFile);
-        System.out.print("Введите полный путь файла :");
-        String sourceURI =bufferedReader.readLine();
-        //String sourceURI = "d:\\JavaRush\\3110\\toArchive.txt";
-
-        Path sourceFile = Paths.get(sourceURI);
-        zipFileManager.createZip(sourceFile);
-
+        } while (operation != Operation.EXIT);
     }
 }
