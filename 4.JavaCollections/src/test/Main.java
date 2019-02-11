@@ -8,6 +8,8 @@ import java.util.List;
  * Created by TSV on 18.09.2017.
  */
 public class Main {
+    static String[][]String = {{""}};
+
     public static void main(String[] args) {
         Integer[] values1 = { 1, 3, 7 };
         List<Integer> listWrite = new ArrayList<Integer>(Arrays.asList(values1));
@@ -23,6 +25,10 @@ public class Main {
         List<Integer> listForEdit = new ArrayList<>(list);
         // But can do in this case
         listForEdit.add(1);
+        byte b =1;
+        String s = "hello";
+
+
 
 
 
