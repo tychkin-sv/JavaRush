@@ -8,10 +8,12 @@ public class Solution {
         Integer a = getValue(Boolean.TRUE, Boolean.TRUE);   //100 expected
         Integer b = getValue(Boolean.FALSE, Boolean.TRUE);  //200 expected
         Integer c = getValue(Boolean.FALSE, Boolean.FALSE); //null expected
+        //Boolean bool= new Boolean("tRuE");
 
         System.out.println(a);
         System.out.println(b);
         System.out.println(c);
+        //System.out.println(bool);
     }
 
     public static Integer getValue(boolean first, boolean second) {
