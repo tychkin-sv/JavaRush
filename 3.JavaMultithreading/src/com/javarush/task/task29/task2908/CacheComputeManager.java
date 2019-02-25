@@ -38,9 +38,9 @@ public class CacheComputeManager<Argument, Value> implements Computable<Argument
             @Override
             public Value call() throws Exception {
 
-                return null;
+                return computable.compute(arg);
             }
         });
-        return null;
+        return ft;
     }
 }
