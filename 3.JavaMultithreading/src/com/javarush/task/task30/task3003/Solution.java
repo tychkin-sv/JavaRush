@@ -12,13 +12,14 @@ public class Solution {
     2. Стань на имени аргумента в конструкторе (queue) и нажми Alt+Enter -> Create Field for Parameter 'queue' -> Enter -> Enter. Имя поля - queue.
     3. Стань на подчеркнутой строке - описании класса. Далее Alt+Enter -> Implement Methods -> Enter.
     4. Проделай п.1-3 для класса Consumer.
-     */
+    */
 
     public static void main(String[] args) throws InterruptedException {
         TransferQueue<ShareItem> queue = new LinkedTransferQueue<>();
 
         Thread producer = new Thread(new Producer(queue));
         Thread consumer = new Thread(new Consumer(queue));
+
         producer.start();
         consumer.start();
 
@@ -28,4 +29,4 @@ public class Solution {
         consumer.interrupt();
     }
 
-   }
+}

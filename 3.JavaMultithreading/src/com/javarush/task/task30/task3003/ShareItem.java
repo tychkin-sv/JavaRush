@@ -1,7 +1,5 @@
 package com.javarush.task.task30.task3003;
 
-import java.util.Objects;
-
 //This class shows how to call other constructors using 'this'
 public class ShareItem {
     public String description;
@@ -32,6 +30,8 @@ public class ShareItem {
         return itemId;
     }
 
+
+
     @Override
     public String toString() {
         return "ShareItem{" +
@@ -44,13 +44,17 @@ public class ShareItem {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         ShareItem shareItem = (ShareItem) o;
-        return itemId == shareItem.itemId &&
-                Objects.equals(description, shareItem.description);
+
+        if (itemId != shareItem.itemId) return false;
+        return description != null ? description.equals(shareItem.description) : shareItem.description == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, itemId);
+        int result = description != null ? description.hashCode() : 0;
+        result = 31 * result + itemId;
+        return result;
     }
 }
