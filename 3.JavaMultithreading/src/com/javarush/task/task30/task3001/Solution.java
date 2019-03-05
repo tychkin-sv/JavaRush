@@ -22,8 +22,8 @@ public class Solution {
 
     public static Number convertNumberToOtherNumberSystem(Number number, NumberSystem expectedNumberSystem) {
         //напишите тут ваш код
-        BigInteger bd = new BigInteger(number.getDigit(),number.getNumberSystem().getNumberSystemIntValue());
+        BigInteger bd = new BigInteger( number.getDigit(), number.getNumberSystem().getNumberSystemIntValue());
         //System.out.println(bd.toString(8));
-        return new Number(expectedNumberSystem, bd.toString(expectedNumberSystem.getNumberSystemIntValue()));
+        return new Number( expectedNumberSystem, bd.toString(expectedNumberSystem.getNumberSystemIntValue()));
     }
 }
